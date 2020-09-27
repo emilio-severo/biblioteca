@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const conexao = require('./bd/conexao');
 const Livros = require('./bd/Livros');
-const { json } = require('body-parser');
+const bodyParser = require('body-parser');
 
 const app = express();
 
