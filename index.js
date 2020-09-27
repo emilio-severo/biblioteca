@@ -4,6 +4,7 @@ const conexao = require('./bd/conexao');
 const Livros = require('./bd/Livros');
 const bodyParser = require('body-parser');
 
+//Instancia o aplicativo do Express.
 const app = express();
 
 app.use(express.static("public"));
