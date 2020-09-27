@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biblioteca</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <%- include ('../partials/navbar'); %>
+        <h3>Livros cadastrados</h3><br>
+        <a href="/livros/novo" class="btn btn-primary">Novo livro</a><br><br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% livros.forEach(function(livro){ %>
+                    <tr>
+                        <td><%=livro.id%></td>
+                        <td><%=livro.titulo%></td>
+                        <td><%=livro.autor%></td>
+                        <td><%=livro.editora%></td>
+                        <td><%=livro.ano%></td>
+                        <td><a href="/livros/editar/<%=livro.id%>">editar</a></td>
+                        <td><a href="/livros/excluir/<%=livro.id%>" 
+                            onclick="return confirm('Confirma a exclusão?')">excluir</a></td>                        
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
